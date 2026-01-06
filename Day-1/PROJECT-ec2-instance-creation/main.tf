@@ -6,3 +6,11 @@ resource "aws_instance" "example" {
     ami           = "ami-068c0051b15cdb816"  # Specify an appropriate AMI ID
     instance_type = "t3.micro"
 }
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
